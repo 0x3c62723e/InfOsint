@@ -56,7 +56,7 @@ async def user(msg: types.Message):
         print(username)
         await msg.answer("Processing Please Wait!...")
         time.sleep(2)
-        await msg.answer("Getting Information!...)
+        await msg.answer("Getting Information!...")
         time.sleep(2)
         c = truecallerpy.search_phonenumber(username, "IN",
                                             "a1i0q--gY7qq2-c-IbuuAC96o2kttqyeNvZC9MTB-tx-5fyOQk5wu1-cs6sL4s4N")
