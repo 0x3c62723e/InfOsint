@@ -11,17 +11,18 @@ import truecallerpy
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 
-API = '6753198917:AAEwiBbBQCBkzJB_Y0JndTrB8xYvqkLu_wk'
+API = '6753198917:AAEwiBbBQCBkzJB_Y0JndTrB8xYvqkLu_wk' #Your Telegrma Bot API
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=API)
 BOT = instaloader.Instaloader()
 dp = Dispatcher(bot)
 
-
-b2 = KeyboardButton('IG OSINT ☠')
+b1 = KeyboardButton('Admin')
+b2 = KeyboardButton('Instagram')
+b3 = KeyboardButton('Developer')
 b4 = KeyboardButton('PhoneInfo📞')
 
-r = ReplyKeyboardMarkup(resize_keyboard=True).add(b2,b4)
+r = ReplyKeyboardMarkup(resize_keyboard=True).add(b1, b2).add(b3,b4)
 
 
 @dp.message_handler(commands=['start'])
@@ -29,14 +30,23 @@ async def start(msg: types.Message):
     await msg.answer(f"Hello, Welcome {msg.chat.first_name} ", reply_markup=r)
 
 
+@dp.message_handler(text='Admin ☠')
+async def admin(msg: types.Message):
+    await msg.answer("Admin --> @rootosintxmenbot")
 
-@dp.message_handler(text="IG OSINT 🔍")
-async def insta(msg: types.Message):
-    await msg.answer("Please Type Instagram Username: ")
 
-@dp.message_handler(text='Phone Information 🔍')
+@dp.message_handler(text='Developer')
+async def actress(msg: types.Message):
+    await msg.answer('--> @https://t.me/rootosintxmenbot')
+
+
+@dp.message_handler(text="IG OSINT ☠")
 async def insta(msg: types.Message):
-    await msg.answer("Send me a MobileNum with Country Code: \nExample +63930xxxxxxx ")
+    await msg.answer("Send me Instagram Username: ")
+
+@dp.message_handler(text='PhoneInfo📞')
+async def insta(msg: types.Message):
+    await msg.answer("Send me a MobileNum with Country Code: \nExample +91830xxxxxxx ")
 
 @dp.message_handler()
 async def user(msg: types.Message):
@@ -44,9 +54,9 @@ async def user(msg: types.Message):
     if username[1:].isdigit():
         num = phonenumbers.parse(username)
         print(username)
-        await msg.answer("Processing Please Wait!...")
+        await msg.answer("______Processing______")
         time.sleep(2)
-        await msg.answer("Getting Information!...")
+        await msg.answer("___Getting Information___")
         time.sleep(2)
         c = truecallerpy.search_phonenumber(username, "IN",
                                             "a1i0q--gY7qq2-c-IbuuAC96o2kttqyeNvZC9MTB-tx-5fyOQk5wu1-cs6sL4s4N")
