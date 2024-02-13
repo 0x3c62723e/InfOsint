@@ -17,9 +17,8 @@ bot = Bot(token=API)
 BOT = instaloader.Instaloader()
 dp = Dispatcher(bot)
 
-b1 = KeyboardButton('Admin of this bot')
+
 b2 = KeyboardButton('IG OSINT ☠')
-b3 = KeyboardButton('OSINT Bot Developer')
 b4 = KeyboardButton('PhoneInfo📞')
 
 r = ReplyKeyboardMarkup(resize_keyboard=True).add(b1, b2).add(b3,b4)
@@ -29,15 +28,6 @@ r = ReplyKeyboardMarkup(resize_keyboard=True).add(b1, b2).add(b3,b4)
 async def start(msg: types.Message):
     await msg.answer(f"Hello, Welcome {msg.chat.first_name} ", reply_markup=r)
 
-
-@dp.message_handler(text='Admin of this bot🕵️')
-async def admin(msg: types.Message):
-    await msg.answer("Admin --> xmenhaxor")
-
-
-@dp.message_handler(text='Administrator')
-async def actress(msg: types.Message):
-    await msg.answer('--> xmenhaxor')
 
 
 @dp.message_handler(text="IG OSINT 🔍")
