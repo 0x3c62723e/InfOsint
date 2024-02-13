@@ -21,7 +21,7 @@ dp = Dispatcher(bot)
 b2 = KeyboardButton('IG OSINT ☠')
 b4 = KeyboardButton('PhoneInfo📞')
 
-r = ReplyKeyboardMarkup(resize_keyboard=True).add(b3,b4)
+r = ReplyKeyboardMarkup(resize_keyboard=True).add(b2,b4)
 
 
 @dp.message_handler(commands=['start'])
